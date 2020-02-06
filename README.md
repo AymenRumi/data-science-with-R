@@ -8,7 +8,7 @@ All programmed and done in **_R_** and written in **_Rmarkdown_** for presentati
 My **_Rmarkdown file_** is compared into a **_PDF_** format found in DataAnalysis.pdf
 
 
-## _Math533_q3 & Math533_q3.pdf_ ##
+## _Math533_q3.Rdm & Math533_q3.pdf_ ##
 
 Simple Linear Regression **_R_** programm implementation
 
