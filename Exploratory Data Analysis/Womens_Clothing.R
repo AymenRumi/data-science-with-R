@@ -2,6 +2,7 @@ library(tidyverse)
 library(dplyr)
 library(readr)
 library(knitr)
+
 Womens_Clothing_Review<-read_csv("Womens_Clothing_Reviews.csv")
 Womens_Clothing_Review<-Womens_Clothing_Review%>%drop_na()
 
