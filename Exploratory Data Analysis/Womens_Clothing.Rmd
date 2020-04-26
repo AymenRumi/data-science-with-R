@@ -1,0 +1,411 @@
+---
+title: "Math 208 Final Project"
+author: "Aymen Rumi"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+# Task 1: [**Exploratory Single Variable Analysis**](https://github.com/yixuan/prettydoc/)
+
+
+Using `Womens_Clothing_Reviews.csv` dataset, we will provide some `Exploratory Data Analyses` and describe the distributions of [**age**](https://github.com/yixuan/prettydoc/), [**product rating**](https://github.com/yixuan/prettydoc/), [**recommendations**](https://github.com/yixuan/prettydoc/), and [**article departments**](https://github.com/yixuan/prettydoc/) amongst the respondents
+
+
+
+
+`Functions` we will use include
+```yaml
+DataVisualization: Produces graphic visual of numerical/categorical data
+FrequencyTable: Produces table of variable with counts
+SummaryTable: Produces a table showing mean,median,standard deviation & quantiles
+```
+
+## [**Function Definition**](https://github.com/yixuan/prettydoc/)
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(knitr)
+Womens_Clothing_Review<-read_csv("Womens_Clothing_Reviews.csv")
+Womens_Clothing_Review<-Womens_Clothing_Review%>%drop_na()
+```
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+DataVisualization<-function(data,subset,numerical=TRUE,name)
+{
+  
+  if(numerical)
+  {
+    
+    ggplot(data,(aes(x=subset)))+geom_bar(fill="lightblue",color="black")+
+      scale_fill_viridis_d()+xlab(name)
+  }
+  else
+  {
+    ggplot(data,(aes(x=subset,fill=subset)))+
+      geom_bar()+scale_fill_viridis_d()+xlab(name)
+  }
+  
+}
+
+```
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+FrequencyTable<-function(data)
+{
+  data%>%summarise(count=n())%>%mutate(prop=count/sum(count))%>%
+    arrange(desc(count))%>%kable()
+}
+
+```
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+SummaryTable<-function(data,subset)
+{
+  data%>%summarise(Ave=mean(subset),
+                   Med=median(subset),
+                   '25%ile'=quantile(subset,0.25),
+                   '75%ile'=quantile(subset,0.75),
+                   Std=sd(subset)
+                   )%>%kable()
+}
+
+```
+
+## [**Variable Analysis:**](https://github.com/yixuan/prettydoc/) Age
+
+The figures below provide the `Density Plot`, `Ordered Count/Proportion Table`, and `Summary Table` for [**age**](https://github.com/yixuan/prettydoc/)
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+DataVisualization(Womens_Clothing_Review,with(Womens_Clothing_Review,Age),name="Age")
+FrequencyTable(Womens_Clothing_Review%>%group_by(Age))
+SummaryTable(Womens_Clothing_Review,with(Womens_Clothing_Review,Age))
+
+```
+
+
+`Analysis` 
+```yaml
+We can see that the average age is approximately 43 with
+a spread of 12, the density has a high peak for age
+39(1103 people) which is 375 more than the next highest
+age group of 35, the 25th and 75th quartile are between
+34 and 53
+```
+
+
+## [**Variable Analysis:**](https://github.com/yixuan/prettydoc/) Rating
+
+The figures below provide the `Density Plot` and `Ordered Count/Proportion Table` for [**rating**](https://github.com/yixuan/prettydoc/)
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+DataVisualization(Womens_Clothing_Review,
+                  with(Womens_Clothing_Review,Rating),name="Rating")
+FrequencyTable(Womens_Clothing_Review%>%group_by(Rating))
+
+```
+
+`Analysis` 
+```yaml
+Looks like more a little more than half of reviews are positive with 5 stars,
+and the rest combine for the other half with 4 taking approximately 20%
+3 taking 12% and the rest for 1&2, overall very good ratings
+```
+
+## [**Variable Analysis:**](https://github.com/yixuan/prettydoc/) Recommendations
+
+The figures below provide the `Density Plot` and `Ordered Count/Proportion Table` for [**recommendations**](https://github.com/yixuan/prettydoc/)
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+DataVisualization(Womens_Clothing_Review,
+                  with(Womens_Clothing_Review,Recommended),name="Recommended")
+FrequencyTable(Womens_Clothing_Review%>%group_by(Recommended))
+```
+
+`Analysis` 
+```yaml
+There is a 80% positive recommendation and 20% negative,
+overall high recommendation rating
+
+```
+
+## [**Variable Analysis:**](https://github.com/yixuan/prettydoc/) Departments
+
+The figures below provide the `Density Plot` and `Ordered Count/Proportion Table` for [**recommendations**](https://github.com/yixuan/prettydoc/)
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+DataVisualization(Womens_Clothing_Review,with(Womens_Clothing_Review,
+                                              Department_Name),FALSE,"Departments")
+FrequencyTable(Womens_Clothing_Review%>%
+                 group_by(Department_Name))
+
+```
+
+`Analysis` 
+```yaml
+There is a higher percentage of article clothings that are
+tops(44%) with second in dresses(27%) and the
+rest of the 3 each getting significantly lower
+
+```
+
+
+
+# Task 2: [**Exploring Associations**](https://github.com/yixuan/prettydoc/)
+
+Using `Womens_Clothing_Reviews.csv` , we will explore 2 questions.
+
+` Question 1` We will look at distributons of [**age**](https://github.com/yixuan/prettydoc/) accross [**article departments**](https://github.com/yixuan/prettydoc/)
+
+
+` Question 2` We will look at five demographic categories: [**25 and under**](https://github.com/yixuan/prettydoc/), [**26 - 35**](https://github.com/yixuan/prettydoc/), [**36-45**](https://github.com/yixuan/prettydoc/), [**46-64**](https://github.com/yixuan/prettydoc/), and [**65 and over**](https://github.com/yixuan/prettydoc/) and compare the distribution of product ratings amongst each of the five age groups
+
+
+
+`Functions` we will use include
+```yaml
+Department_Summary: Produces a frequency table for a specific Department
+Age_Category: Takes in int and puts in age category
+
+```
+
+## [**Function Definition**](https://github.com/yixuan/prettydoc/)
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+Department_Summary<-function(department)
+{
+  Womens_Clothing_Review%>%filter(Department_Name==department)%>%
+    summarise(Ave=mean(Age),Med=median(Age),
+                    '25%ile'=quantile(Age,0.25),
+                    '75%ile'=quantile(Age,0.75),
+                    Std=sd(Age))%>%kable()
+}
+
+```
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+
+Age_Category<-function(value)
+{
+    if(value<=25)
+    {
+        return("25 and under")
+    }
+    else if((value>=26)&&(value<=35))
+    {
+        return("26-35")
+    }
+    else if((value>=36)&&(value<=45))
+    {
+        return ("36-45")
+    }
+    else if((value>=36)&&(value<=64))
+    {
+        return("46-64")
+    }
+    else
+    {
+        return("65 and over")
+    }
+}
+    
+ 
+ 
+```
+
+
+## [**Question 1:**](https://github.com/yixuan/prettydoc/)
+
+`Data Visualization`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+ggplot(Womens_Clothing_Review,aes(Age,fill=Department_Name))+
+  geom_bar()+facet_wrap(~Department_Name)
+
+```
+
+`Bottoms: Age Distribution Table`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Department_Summary("Bottoms")
+```
+
+`Intimate: Age Distribution Table`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Department_Summary("Intimate")
+```
+
+`Jackets: Age Distribution Table`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Department_Summary("Jackets")
+```
+
+`Tops: Age Distribution Table`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Department_Summary("Tops")
+```
+
+`Trends: Age Distribution Table`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Department_Summary("Trend")
+
+```
+
+
+
+`Analysis` 
+```yaml
+The distribution as in the spread of age seems to look relatively the same across
+all departments but the densities differ greatly,the density of
+people rating products are in order of Tops, Dresses, Jackets,
+Intimate,Jackets, Trends
+
+```
+
+## [**Question 2:**](https://github.com/yixuan/prettydoc/)
+
+`Data Visualization`
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+Womens_Clothing_Review<-Womens_Clothing_Review%>%
+  mutate(Category=map_chr(Age,Age_Category))
+
+
+ggplot(Womens_Clothing_Review,aes(x=Rating,fill=Category))+
+  geom_bar()+facet_wrap(~Category)
+
+```
+
+
+`Analysis` 
+
+```yaml
+Again the distribution as in the spread of rating seems to look 
+relatively the same across all age groups but the densities 
+differ greatly due to the fact that there is more counts of 
+ratings from certain groups, groups such as 46-64 and 36-45 
+age group have a vast amount of ratings and seem to be most 
+enthusiastic about their company’s products.
+```
+
+
+## Task 3: [**Ten Most Popular Products**](https://github.com/yixuan/prettydoc/)
+
+Using `Womens_Clothing_Reviews.csv` dataset, we will compile a list of their [**ten most popular products**](https://github.com/yixuan/prettydoc/) based on [**Recommendations**](https://github.com/yixuan/prettydoc/) (with each product indicated by [**ID number**](https://github.com/yixuan/prettydoc/))
+
+We will use `Wilson’s Lower Confidence Limit` computed via: 
+
+[**n**](https://github.com/yixuan/prettydoc/) = the `number` of respondents who rated that product (positively or negatively)
+
+[**p**](https://github.com/yixuan/prettydoc/)=the `proportion` of respondents who positively recommended a certain product
+
+[*$a = \frac{1.96^2}{n}$*](https://github.com/yixuan/prettydoc/)
+
+[*$b = \frac{p(1-p)}{n}$*](https://github.com/yixuan/prettydoc/)
+
+[*$c = \frac{a}{2n}$*](https://github.com/yixuan/prettydoc/)
+
+[*$WLCL = \frac{p+a-1.96\sqrt{b+c}}{1+2a}$*](https://github.com/yixuan/prettydoc/)
+
+
+`Functions` we will use include
+```yaml
+Clothing: returns the proportion of positively recommended ratings for given ID
+Compute_WLCL: Given a dataset will compute its WLCL and output it
+
+```
+
+## [**Function Definition**](https://github.com/yixuan/prettydoc/)
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Clothing<-function(ID)
+{
+
+    max((Womens_Clothing_Review%>%filter(Clothing_ID%in%ID)%>%
+           group_by(Recommended)%>%summarise(count=n()))%>%
+          mutate(prop=count/sum(count))%>%select(prop))
+    
+}
+```
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+
+Compute_WLCL<-function(Womens_Clothing_Review)
+{
+  
+  Womens_Clothing_Review<-Womens_Clothing_Review%>%
+    group_by(Clothing_ID)%>%mutate(prop=map_dbl(Clothing_ID,Clothing))
+  Womens_Clothing_Review<-Womens_Clothing_Review%>%
+    mutate(a=(1.96**2)/(2*n))
+  Womens_Clothing_Review<-Womens_Clothing_Review%>%
+    mutate(b=(prop*(1-prop))/(n))
+  Womens_Clothing_Review<-Womens_Clothing_Review%>%
+    mutate(c=(a)/(2*n))
+  Womens_Clothing_Review<-Womens_Clothing_Review%>%
+    mutate(WLCL=(prop+a-1.96*sqrt(b+c))/(1+2*a))
+
+  head(distinct(Womens_Clothing_Review%>%
+                  arrange(desc(WLCL))%>%select(Clothing_ID,WLCL,n,Department_Name)),10)%>%kable()
+}
+```
+
+
+## [**Part A):**](https://github.com/yixuan/prettydoc/)
+`the 10 product ID’s with the highest average ratings`
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Womens_Clothing_Review<-Womens_Clothing_Review%>%
+  group_by(Clothing_ID)%>%mutate(n=n())
+
+head(Womens_Clothing_Review%>%group_by(Clothing_ID)%>%
+       mutate(Mean_Rating= mean(Rating))%>%select(Clothing_ID,n,Department_Name,Mean_Rating)%>%
+       arrange(desc(Mean_Rating)),10)%>%kable()
+```
+
+
+## [**Part B):**](https://github.com/yixuan/prettydoc/)
+`the 10 product ID’s with the highest proportion of positive recommendations`
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+head(Womens_Clothing_Review%>%group_by(Clothing_ID)%>%
+       mutate(prop=map_dbl(Clothing_ID,Clothing))%>%
+       select(Clothing_ID,prop,n,Department_Name)%>%
+       arrange(desc(prop))%>%distinct(),10)%>%kable()
+```
+
+## [**Part C):**](https://github.com/yixuan/prettydoc/)
+`the 10 product ID’s with the highest Wilson lower confidence limits`
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+Compute_WLCL(Womens_Clothing_Review)
+
+```
+
+
+`Analysis` 
+
+```yaml
+I think the list that best represents the products which are most popular are,
+List C for WLCL because the lists shown in A and B can be deceiving as the 
+number of counts can be low and this matters for showing an indication of popularity and
+i think that WLCL captures that well, as opposed to showing just rating and positive
+recommendation proportions it measures the popularity 
+```
+
+
+
+
+
+
+
+
+
+
