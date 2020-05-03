@@ -1,0 +1,304 @@
+---
+title: "Regression & Analysis of Variance"
+author: "Aymen Rumi"
+date: "4/26/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(dbplyr)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(ggmap)
+```
+
+# Overview
+
+We will analyze data from 3 distinct datasets **Abalone**, **Cigs**,
+**BirthWeight**, we will make hypothesis and present observations & interpret results from findings from our analysis
+
+
+# Abalone:
+
+**Hypothesis**:
+I believe that a simple linear regression model with normal error assumption is appropriate to describe the relationship between the height of abalones and their ages, and particularly, that a larger height is associated with an older age, we will use data from `abalone.csv` to test this hypotheis
+
+
+```{r}
+# importing data
+file1 <- "http://www.math.mcgill.ca/yyang/regression/data/abalone.csv"
+abalone <- read.csv(file1, header = TRUE)
+
+
+```
+
+
+```{r}
+
+# functions for summary statistics
+
+Summary_Table<-function(data,variable)
+{
+    data %>% summarise(Avg = mean(variable),
+        Med = median(variable),
+        Q25 = quantile(variable,0.25), Q75 = quantile(variable,0.75),
+        StD = sd(variable), Var=var(variable), Min=min(variable),
+        Max=max(variable))%>%kable()
+}
+
+Plot_Distribution<-function(data,variable,title="")
+{
+  ggplot(data, aes(x=variable))+geom_density(color="darkblue", fill="lightblue")+ggtitle(title)
+}
+
+```
+
+## Univariate Analysis: Height
+
+```{r}
+Plot_Distribution(abalone,abalone$Height,"Abalone Height Distribution")
+Summary_Table(abalone,abalone$Height)
+```
+
+
+## Univariate Analysis: Ring
+
+```{r}
+Plot_Distribution(abalone,abalone$Rings,"Abalone Ring Distribution")
+Summary_Table(abalone,abalone$Rings)
+```
+
+## Bivariate Analysis: Height vs Rings
+
+```{r}
+ggplot(abalone,aes(x=Height,y=Rings))+geom_point()+stat_density_2d(aes(fill = ..level..), geom = "polygon")+ geom_density_2d()
+
+ggplot(abalone,aes(x=Height,y=Rings,fill = ..level..), geom = "polygon")+geom_density_2d()+stat_density_2d(aes(fill = ..level..), geom = "polygon")+ geom_density_2d()
+
+```
+
+## Fitting Linear Model
+
+```{r}
+
+plot(abalone$Height,abalone$Rings,pch=19,xlab='Height',ylab='Rings')
+
+abline(v=mean(abalone$Height),h=mean(abalone$Rings),lty=2)
+
+fit.RP<-lm(abalone$Rings~abalone$Height)
+
+title('Line of best fit for Abalone Data')
+
+abline(coef(fit.RP),col='red')
+
+summary(fit.RP)
+
+```
+
+## Model Aquecuacy Checking (Residual Analysis) & Diagnostic
+
+```{r}
+ggplot(data = data.frame(x = abalone$Height, y = residuals(fit.RP)), aes(x = x, y = y))+geom_point(shape=21)+ylab("Residual")+xlab("Height")
+
+
+plot(abalone$Height,residuals(fit.RP))
+abline(h=0,col="gray")
+
+hist(residuals(fit.RP),breaks=40,freq=FALSE,xlab="Residual",main="")
+curve(dnorm(x,mean=0,sd=sd(residuals(fit.RP))),add=TRUE,col="blue")
+```
+
+
+## Removing Outliers & Data Transformation
+
+```{r}
+
+abalone<-filter(abalone,Height<0.4)
+plot(y=log(abalone$Rings),x=sqrt(abalone$Height))
+transform.RP<-lm(log(abalone$Rings)~sqrt(abalone$Height))
+abline(coef(transform.RP),col='red')
+
+
+summary(transform.RP)
+
+plot(sqrt(abalone$Height),residuals(transform.RP))
+abline(h=0,col='gray')
+
+hist(residuals(transform.RP),breaks=40,freq=FALSE,xlab="Residual",main="")
+curve(dnorm(x,mean=0,sd=sd(residuals(transform.RP))),add=TRUE,col="blue")
+
+```
+
+
+## Building Confidence & Prediction Interval
+
+```{r}
+par(mar=c(4,4,0,1))
+x<-sqrt(abalone$Height)
+y<-log(abalone$Rings)
+fit.RP<-lm(y~x)
+
+xnew<-seq(0,0.5,by=0.01)
+
+
+#Confidence interval
+ynew.interval<-predict(fit.RP,newdata=data.frame(x=xnew),interval='confidence')
+plot(x,y,xlab='sqrt(Height)',ylab='log(Rings)')
+abline(coef(fit.RP),col='red')
+
+lines(xnew,ynew.interval[,2],lty=2,col='red')
+lines(xnew,ynew.interval[,3],lty=2,col='red')
+
+#Prediction interval
+
+yonew.interval<-predict(fit.RP,newdata=data.frame(x=xnew),interval='prediction')
+lines(xnew,yonew.interval[,2],lty=2,col='blue')
+lines(xnew,yonew.interval[,3],lty=2,col='blue')
+legend(0,3.25,c('Prediction','Conf. Interv.','Pred. Interv.'),col=c('red','red','blue'),lty=c(1,2,2))
+
+title('Prediction of Age with Height',line=-17)
+```
+
+**Data Analysis Conclusions**:
+
+After fitting a standard linear model and analyzing residuals, it was clear that there was not a full linear relationship between the two variable as there was sign of non-constant variance which slightly violated linear model assumptions we had made about the residuals being mean 0 with constant variance our residuals tended to have a right skew. Once log transformation of the response variable was made as well as squared root transformation of the predictor, our model tended to perform a lot better
+
+
+# Cigs:
+
+
+**Hypothesis**:
+
+We will investigate and build a model for the relationship between response CO2 produced for cigarette and predictors of Tar, Weight & Nicotine. I believe a Multiple Linear Regression Model will help explain the relationship and will be an adequate enough model with significant relationships between Tar and Weight
+
+
+```{r}
+# importing data
+file1 <- "http://www.math.mcgill.ca/yyang/regression/data/cigs.csv"
+cigs <- read.csv(file1, header = TRUE)
+
+
+```
+
+
+```{r}
+CO<-cigs$CO
+TAR<-cigs$TAR
+NICOTINE<-cigs$NICOTINE
+WEIGHT<-cigs$WEIGHT
+```
+
+# Univariate Analysis
+```{r}
+Plot_Distribution(cigs,TAR,"Tar Distribution")
+Plot_Distribution(cigs,NICOTINE,"Nicotine Distribution")
+Plot_Distribution(cigs,WEIGHT,"Weight Distribution")
+Plot_Distribution(cigs,CO,"CO2 Distribution")
+
+```
+
+
+# Bivariate Analysis
+```{r}
+plot(cigs)
+```
+
+
+
+# Regression Analysis 
+```{r}
+summary(lm(CO~TAR+NICOTINE+WEIGHT))
+
+anova(lm(CO~TAR+NICOTINE+WEIGHT))
+
+
+```
+
+# Analyzing Muticollinearity
+
+```{r}
+
+plot(y=TAR,x=NICOTINE)
+abline(coef(lm(TAR~NICOTINE)),col='red')
+cor(TAR,NICOTINE)
+```
+
+
+# Picking Model
+```{r}
+anova(lm(CO~TAR+WEIGHT))
+
+
+sigma(lm(CO~TAR+WEIGHT))
+sigma(lm(CO~TAR))
+
+
+plot(y=CO,x=TAR)
+
+abline(coef(lm(CO~TAR)),col='red')
+
+```
+
+**Data Analysis Conclusions**:
+
+After analyzing predictors, conclusions were made about multicollinearity between Tar & Nicotine thus we opted to choose tar as one of the variable in our model, upon fitting a MLR model with tar, weight, nicotine it was clear that the only significant preditor was tar. Analysis on resdisual was done to confirm this finding
+
+
+# BirthWeight (Smokers vs Non-Smokers):
+
+**Hypothesis**:
+I believe that there is a difference in Birth Weight in relation to Gestion time, in between Smokers & Non-Smokers
+
+```{r}
+data.source<-"http://www.math.mcgill.ca/yyang/regression/data/birthsmokers.csv"
+birthsmokers<-read.csv(file=data.source)
+
+```
+
+## Univariate Analysis: Weight
+
+```{r}
+Plot_Distribution(birthsmokers,birthsmokers$Wgt)
+```
+
+## Univariate Analysis: Gestations
+
+```{r}
+Plot_Distribution(birthsmokers,birthsmokers$Gest)
+```
+
+## Bivariate Analysis
+
+```{r}
+
+plot(birthsmokers)
+
+plot(x=subset(birthsmokers,Smoke=="no")$Gest,y=subset(birthsmokers,Smoke=="no")$Wgt,col="blue",pch=19,xlab="Gestion", ylab="Weight")
+
+points(x=subset(birthsmokers,Smoke=="yes")$Gest,y=subset(birthsmokers,Smoke=="yes")$Wgt,col="red",pch=19)
+
+abline(coef(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="no"))),col='blue')
+abline(coef(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="yes"))),col='red')
+
+
+```
+
+## Regression Analysis
+
+```{r}
+
+summary(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="no")))
+
+summary(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="yes")))
+
+confint(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="no")))
+
+confint(lm(Wgt~Gest,data=subset(birthsmokers,Smoke=="yes")))
+
+```
+
+**Data Analysis Conclusions**:
+
+There is strong evidence of difference in correlation between Non Smoker & Smokers as observed from the data. More specifically there is 8 units of difference between predictors & response for Smokers vs Non-Smokers
