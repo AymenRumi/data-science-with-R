@@ -1,0 +1,137 @@
+---
+title: "Gas Mileage Prediction"
+author: "Aymen Rumi"
+date: "5/5/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(dbplyr)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(ISLR)
+library(MASS)
+library(class)
+library(caTools)
+
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Overview
+
+We will predict whether a given car gets high or low gas mileage given data from Auto dataset
+
+```{r}
+Auto<-Auto%>%mutate(mileage=ifelse(mpg > median(mpg),1,0))
+
+attach(Auto)
+names(Auto)
+
+
+ggplot(data=Auto,aes(y=mpg,x=cylinders))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=displacement))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=horsepower))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=weight))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=acceleration))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=year))+geom_point(color="blue")
+ggplot(data=Auto,aes(y=mpg,x=origin))+geom_point(color="blue")
+
+```
+
+## Split Data to Train & Test
+
+```{r}
+
+set.seed(1)
+sample <- sample.split(Auto$mileage, SplitRatio = .75)
+train <- subset(Auto, sample == TRUE)
+test  <- subset(Auto, sample == FALSE)
+
+```
+
+## Logistic Regression
+
+```{r}
+
+glm.fit<-glm(mileage~displacement+horsepower+weight+acceleration+year+cylinders+origin,family=binomial,data=train)
+
+summary(glm.fit)
+
+glm.probs=predict(glm.fit,test,type="response")
+
+glm.prediction=rep(0,length(test$mileage))
+glm.prediction[glm.probs>0.5]=1
+
+table(glm.prediction,test$mileage)
+
+mean(glm.prediction==test$mileage)
+mean(glm.prediction!=test$mileage)
+
+```
+
+## Linear Discriminant Analysis
+
+```{r}
+
+lda.fit=lda(mileage~displacement+horsepower+weight+acceleration+year+cylinders+origin,data=train)
+
+lda.fit
+
+plot(lda.fit)
+
+lda.prediction=predict(lda.fit, test)
+lda.class=lda.prediction$class
+
+table(lda.class,test$mileage)
+
+mean(lda.class==test$mileage)
+mean(lda.class!=test$mileage)
+
+```
+
+## Quadratic Discriminant Analysis
+
+```{r}
+qda.fit=qda(mileage~displacement+horsepower+weight+acceleration+year+cylinders+origin,data=train)
+
+qda.fit
+
+
+qda.prediction=predict(qda.fit, test)
+qda.class=qda.prediction$class
+
+table(qda.class,test$mileage)
+
+mean(qda.class==test$mileage)
+mean(qda.class!=test$mileage)
+```
+
+## K-Nearest Neighbors
+
+```{r}
+
+
+knn.pred=knn(train[2:8],test[2:8],train$mileage,k=1)
+
+table(knn.pred,test$mileage)
+mean(knn.pred==test$mileage)
+
+
+knn.pred=knn(train[2:8],test[2:8],train$mileage,k=3)
+table(knn.pred,test$mileage)
+mean(knn.pred==test$mileage)
+
+
+
+knn.pred=knn(train[2:8],test[2:8],train$mileage,k=10)
+table(knn.pred,test$mileage)
+mean(knn.pred==test$mileage)
+```
+
+## Conclusions
+
+We have compared the performance on test data for different classifiers trained on 75% of the dataset. The predictors we used to estimate our response were cylinders, displacement, horsepower, weight, acceleration, year & origin. The classification alrotighms used were Logistic Regression, Linear Discriminant Analysis, Quadratic Distriminant Analysis & K-Nearest Neighbors. Linear Discrimant Analysis outperformed all the classifiers with a 92% accuracy rate and KNN underperformed with a still relatively high accuracy of 85%
