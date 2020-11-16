@@ -15,6 +15,7 @@ library(ISLR)
 library(MASS)
 library(class)
 library(caTools)
+library(plotly)
 
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(echo = TRUE)
@@ -27,18 +28,19 @@ We will predict whether a given car gets high or low gas mileage given data from
 
 ```{r}
 Auto<-Auto%>%mutate(mileage=ifelse(mpg > median(mpg),1,0))
-
+Auto$mileage<-as.factor(Auto$mileage)
 attach(Auto)
 names(Auto)
 
 
-ggplot(data=Auto,aes(y=mpg,x=cylinders))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=displacement))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=horsepower))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=weight))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=acceleration))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=year))+geom_point(color="blue")
-ggplot(data=Auto,aes(y=mpg,x=origin))+geom_point(color="blue")
+
+ggplot(data=Auto,aes(y=mpg,x=cylinders,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=displacement,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=horsepower,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=weight,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=acceleration,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=year,color=mileage))+geom_point()
+ggplot(data=Auto,aes(y=mpg,x=origin,color=mileage))+geom_point()
 
 ```
 
