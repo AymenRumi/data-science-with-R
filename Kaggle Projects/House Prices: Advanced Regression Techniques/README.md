@@ -17,7 +17,7 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
 Part 2: [House Prices- Advanced Regression Techniques.ipynb](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb)
 
-2. Python Programming - 
+2. Python Programming 
 - [Deep Learning Model Training](#dv)
 - [Hyperparameter Tuning](#dc)
 - [Model Selection](#dc)
