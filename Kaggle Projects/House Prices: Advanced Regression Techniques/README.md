@@ -15,7 +15,7 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
   * [Data Cleaning](#dc)
   * [Data Visualization](#dv)
-  * [Data Preprocessing](https://people.eecs.berkeley.edu/~russell/hc.html)
+  * [Data Preprocessing](#dr)
   * [Dimensionality Reduction](https://people.eecs.berkeley.edu/~russell/hc.html)
   * [Feature Engineering](https://people.eecs.berkeley.edu/~russell/hc.html)
 
@@ -61,7 +61,7 @@ Sample Visualizations:
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvsyb.png" width="550" height="350">
 
 
-### Dimensionality Reduction <a name="dv"></a>
+### Dimensionality Reduction <a name="dr"></a>
 
 2D visualizing of high dimensional  feature space - 79+D dimensions  using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
 
