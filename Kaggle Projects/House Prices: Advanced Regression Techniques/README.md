@@ -13,5 +13,12 @@ Click [here](https://www.kaggle.com/c/house-prices-advanced-regression-technique
 - [Data Preprocessing](#dp)
 - [Dimensionality Reduction](#dr)
 - [Feature Engineering](#fe)
-2. [File Description](#files)
-3. [Licensing, Authors, and Acknowledgements](#licensing)
+
+1. Python Programming - Click [here](https://github.com/AymenRumi/Data-Science-with-R/edit/master/Kaggle%20Projects/House%20Prices:
+%20Advanced%20Regression%20Techniques/README.md) to view workbook
+- [Machine Learning Model Training](#dc)
+- [Deep Learning Model Training](#dv)
+- [Hyperparameter Tuning](#dc)
+- [Model Selection](#dc)
+- [Residual & Error Analysis](#dp)
+
