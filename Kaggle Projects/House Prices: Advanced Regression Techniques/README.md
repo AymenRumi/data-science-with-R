@@ -49,7 +49,7 @@ Data After Cleaning:
 
 Sample Visualizations:
 
-  * goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
+  * Goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
 
 #### SalesPrice Distribution
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/distribution.png" width="500" height="300">
@@ -71,6 +71,8 @@ Sample Visualizations:
 
 View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
 
+
+  * Categorical data is processed using [One-Hot Encoding](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
 ### Feature Engineering <a name="fe"></a>
 
 View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
