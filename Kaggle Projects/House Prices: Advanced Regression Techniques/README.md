@@ -13,7 +13,7 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
 - **R Programming**: 
 
-  * [Data Cleaning](https://learning.oreilly.com/library/view/building-intelligent-systems/9781484234327/)
+  * [Data Cleaning](#dc)
   * [Data Visualization](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) 
   * [Data Preprocessing](https://people.eecs.berkeley.edu/~russell/hc.html)
   * [Dimensionality Reduction](https://people.eecs.berkeley.edu/~russell/hc.html)
@@ -33,3 +33,5 @@ Part 2: [House Prices- Advanced Regression Techniques.ipynb](https://github.com/
 ## House Prices-Data Cleaning, Data Visualization, Dimensionality Reduction, Data Preprocessing & Feature Engineering
 
 Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf) to view workbook
+
+### Data Cleaning <a name="dc"></a>
