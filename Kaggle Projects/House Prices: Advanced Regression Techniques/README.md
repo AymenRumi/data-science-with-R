@@ -85,8 +85,11 @@ View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/
 
 Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) to view ipython workbook
 
-  * Hyperparameter Tuning: Used to identify hyperamater for models for best performance under K-Fold cross validation error
-  * Residual Analysis: Used to identify normality assumption of errors terms, signifies model captures proper variablity of response ~y
+### Hyperparameter Tuning:
+  * Used to identify hyperamater for models for best performance under K-Fold cross validation error
+  
+### Residual Analysis:
+  * Used to identify normality assumption of errors terms, signifies model captures proper variablity of response ~y
 
 ### Model Training Result Summary (R^2 Score):
 
