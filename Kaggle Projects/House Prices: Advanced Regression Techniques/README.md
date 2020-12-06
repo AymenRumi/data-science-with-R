@@ -85,3 +85,8 @@ View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/
 
 Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) to view workbook
 
+### Model Training Result Summary:
+
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/conclusions.png" width="500" height="350">
+
+
