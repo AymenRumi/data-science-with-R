@@ -38,4 +38,4 @@ Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle
 
 Before Cleaning:
 
-<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/missingdata.png" width="650" height="300">
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/missingdata.png" width="950" height="300">
