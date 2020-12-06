@@ -51,11 +51,11 @@ Sample Visualizations:
 
   * goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
 
-<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/distribution.png" width="360" height="350">
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/distribution.png" width="500" height="300">
 
 
-<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvslf.png" width="350" height="350">
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvslf.png" width="500" height="300">
 
-<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvsyb.png" width="350" height="350">
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvsyb.png" width="500" height="350">
 
 
