@@ -65,4 +65,4 @@ Sample Visualizations:
 
 2D visualizing of high dimensional  feature space - 79+D dimensions  using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
 
-<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/pca.png" width="700" height="500">
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/pca.png" width="650" height="550">
