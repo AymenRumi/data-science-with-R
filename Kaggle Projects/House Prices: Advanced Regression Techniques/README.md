@@ -15,9 +15,9 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
   * [Data Cleaning](#dc)
   * [Data Visualization](#dv)
-  * [Data Preprocessing](#dr)
-  * [Dimensionality Reduction](https://people.eecs.berkeley.edu/~russell/hc.html)
-  * [Feature Engineering](https://people.eecs.berkeley.edu/~russell/hc.html)
+  * [Dimensionality Reduction](#dr)
+  * [Data Preprocessing](#dp)
+  * [Feature Engineering](#fe)
 
 Part 2: [House Prices- Advanced Regression Techniques.ipynb](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb)
 
@@ -66,3 +66,11 @@ Sample Visualizations:
 2D visualizing of high dimensional  feature space - 79+D dimensions  using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
 
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/pca.png" width="650" height="450">
+
+### Data Preprocessing <a name="dp"></a>
+
+View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
+
+### Feature Engineering <a name="fe"></a>
+
+View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
