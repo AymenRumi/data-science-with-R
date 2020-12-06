@@ -1,7 +1,7 @@
 
 # House Prices: Advanced Regression Techniques
 
-Kaggle prediction competition: predicting sales prices with 79 explanatory variables.
+Kaggle prediction competition: predicting sales prices Y with high dimentional feature space - 79 explanatory variables (X1,X2,X3,.........X79).
 
 Click [here](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) for competition information
 
@@ -61,3 +61,8 @@ Sample Visualizations:
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/spvsyb.png" width="550" height="350">
 
 
+### Dimensionality Reduction <a name="dv"></a>
+
+Sample Visualizations:
+
+  * goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
