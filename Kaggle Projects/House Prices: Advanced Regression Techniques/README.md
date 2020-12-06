@@ -7,7 +7,7 @@ Click [here](https://www.kaggle.com/c/house-prices-advanced-regression-technique
 
 ### Table of Contents
 
-1. Part 1 : R Programming -Click [here](https://github.com/AymenRumi/Data-Science-with-R/edit/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README.md) to view workbook
+1. R Programming - Click [here](https://github.com/AymenRumi/Data-Science-with-R/edit/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README.md) to view workbook
 - [Data Cleaning](#dc)
 - [Data Visualization](#dv)
 - [Data Preprocessing](#dp)
