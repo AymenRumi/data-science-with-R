@@ -63,6 +63,4 @@ Sample Visualizations:
 
 ### Dimensionality Reduction <a name="dv"></a>
 
-Sample Visualizations:
-
-  * goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
+Visualizing high dimentional space - 79+ feature space in 2 Dimenions using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
