@@ -14,7 +14,7 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 - **R Programming**: 
 
   * [Data Cleaning](#dc)
-  * [Data Visualization](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) 
+  * [Data Visualization](#dv)
   * [Data Preprocessing](https://people.eecs.berkeley.edu/~russell/hc.html)
   * [Dimensionality Reduction](https://people.eecs.berkeley.edu/~russell/hc.html)
   * [Feature Engineering](https://people.eecs.berkeley.edu/~russell/hc.html)
@@ -41,5 +41,17 @@ Missing Data Visualization:
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/missingdata.png" width="850" height="350">
 
 Data After Cleaning:
+
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/cleaned.png" width="850" height="350">
+
+
+### Data Visualization <a name="dv"></a>
+
+Sample Visualizations:
+
+ ** goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
+
+<img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/missingdata.png" width="850" height="350">
+
 
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/cleaned.png" width="850" height="350">
