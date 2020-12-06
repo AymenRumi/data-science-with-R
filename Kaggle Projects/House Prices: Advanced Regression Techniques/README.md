@@ -12,8 +12,9 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
 
 - **R Programming**: 
+
   * [Data Cleaning](https://learning.oreilly.com/library/view/building-intelligent-systems/9781484234327/)
-  * [Thinking in Systems: A Primer](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) (Chapter scans in Shared OneDrive folder)
+  * [Data Visualization](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) 
   * [Human Compatible: AI and the Problem of Control](https://people.eecs.berkeley.edu/~russell/hc.html) (Chapter scans in Shared OneDrive folder)
 
 Part 2: [House Prices- Advanced Regression Techniques.ipynb](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb)
