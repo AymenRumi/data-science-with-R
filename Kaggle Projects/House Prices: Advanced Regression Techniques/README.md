@@ -78,6 +78,9 @@ View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/
 View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
 
 
+  * lm() binary logistic regression call is used to determine features ~ x1,x2,x3,.... that are statistically significant in explaining variance in response ~ y
+
+
 ## House Prices: Machine Learning Model Training, Tuning, Testing <a name="notebook"></a>
 
 Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) to view workbook
