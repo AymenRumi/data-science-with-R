@@ -63,4 +63,4 @@ Sample Visualizations:
 
 ### Dimensionality Reduction <a name="dv"></a>
 
-Visualizing high dimentional space - 79+ feature space in 2 Dimenions using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
+Visualizing high dimentional space - 79+ feature space in 2Ds using [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,components%20and%20ignoring%20the%20rest.)
