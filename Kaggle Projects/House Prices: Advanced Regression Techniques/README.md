@@ -9,13 +9,9 @@ Click [here](https://www.kaggle.com/c/house-prices-advanced-regression-technique
 
 Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reduction, Data Preprocessing & Feature Engineering.pdf](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
 
-- **Books**:
-
-* [Data Cleaning](#dc)
-* [Data Visualization](#dv)
 
 
-- **Books**: 
+- **R Programming**: 
   * [Building Intelligent Systems <em>A Guide to Machine Learning Engineering</em>](https://learning.oreilly.com/library/view/building-intelligent-systems/9781484234327/) (access through McGill Library)
   * [Thinking in Systems: A Primer](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) (Chapter scans in Shared OneDrive folder)
   * [Human Compatible: AI and the Problem of Control](https://people.eecs.berkeley.edu/~russell/hc.html) (Chapter scans in Shared OneDrive folder)
