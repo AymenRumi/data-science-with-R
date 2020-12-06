@@ -9,10 +9,10 @@ Click [here](https://www.kaggle.com/c/house-prices-advanced-regression-technique
 
 Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reduction, Data Preprocessing & Feature Engineering.pdf](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
 
-1. R Programming
+- **Books**:R Programming
 
-- [Data Cleaning](#dc)
-- [Data Visualization](#dv)
+* [Data Cleaning](#dc)
+* [Data Visualization](#dv)
 - [Data Preprocessing](#dp)
 - [Dimensionality Reduction](#dr)
 - [Feature Engineering](#fe)
