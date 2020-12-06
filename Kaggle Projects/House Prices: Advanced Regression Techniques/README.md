@@ -49,7 +49,7 @@ Data After Cleaning:
 
 Sample Visualizations:
 
- ** goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
+  * goal of visualization is to identify relationships between the predictor variables (x1,x2,x3,....) and the response (y)
 
 <img src="https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/README_imgs/missingdata.png" width="850" height="350">
 
