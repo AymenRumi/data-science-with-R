@@ -12,7 +12,7 @@ Part 1: [House Prices-Data Cleaning, Data Visualization, Dimensionality Reductio
 
 
 - **R Programming**: 
-  * [Building Intelligent Systems <em>A Guide to Machine Learning Engineering</em>](https://learning.oreilly.com/library/view/building-intelligent-systems/9781484234327/) (access through McGill Library)
+  * [Data Cleaning](https://learning.oreilly.com/library/view/building-intelligent-systems/9781484234327/)
   * [Thinking in Systems: A Primer](https://www.amazon.ca/Thinking-Systems-Primer-Donella-Meadows/dp/1603580557) (Chapter scans in Shared OneDrive folder)
   * [Human Compatible: AI and the Problem of Control](https://people.eecs.berkeley.edu/~russell/hc.html) (Chapter scans in Shared OneDrive folder)
 
