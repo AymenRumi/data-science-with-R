@@ -24,11 +24,11 @@ Part 2: [House Prices- Advanced Regression Techniques.ipynb](https://github.com/
 
 - **Python Programming**: 
 
-  * [Machine Learning Model Training](#dv)
-  * [Deep Learning Model Training](#dv)
-  * [Hyperparameter Tuning](#dc)
-  * [Model Selection](#dc)
-  * [Residual & Error Analysis](#dp)
+  * [Machine Learning Model Training](#notebook)
+  * [Deep Learning Model Training](#notebook)
+  * [Hyperparameter Tuning](#notebook)
+  * [Model Selection](#notebook)
+  * [Residual & Error Analysis](#notebook)
 
 ## House Prices-Data Cleaning, Data Visualization, Dimensionality Reduction, Data Preprocessing & Feature Engineering
 
@@ -74,3 +74,9 @@ View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/
 ### Feature Engineering <a name="fe"></a>
 
 View in [workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-Data%20Cleaning%2C%20Data%20Visualization%2C%20Dimensionality%20Reduction%2C%20Data%20Preprocessing%20%26%20Feature%20Engineering.pdf)
+
+
+## House Prices: Machine Learning Model Training, Tuning, Testing <a name="notebook"></a>
+
+Click [here](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) to view workbook
+
