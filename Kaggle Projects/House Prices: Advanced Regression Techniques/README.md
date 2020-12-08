@@ -83,7 +83,7 @@ View in [R workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/maste
 
 ## House Prices: Machine Learning Model Training, Tuning, Testing <a name="notebook"></a>
 
-Click view [ipython workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) 
+View [ipython workbook](https://github.com/AymenRumi/Data-Science-with-R/blob/master/Kaggle%20Projects/House%20Prices:%20Advanced%20Regression%20Techniques/House%20Prices-%20Advanced%20Regression%20Techniques.ipynb) 
 
 ### Hyperparameter Tuning:
   * Used to identify hyperamater for models for best performance under K-Fold cross validation error
